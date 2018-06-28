@@ -1,14 +1,17 @@
 package br.com.uds.pizzaria;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.time.LocalDateTime;
 import java.util.Random;
 import java.util.UUID;
 
 public class Pizza {
 
-
+    @ApiModelProperty(hidden = true)
     private final UUID id;
 
+    @ApiModelProperty(hidden = true)
     private final LocalDateTime dataCadadastro;
 
     private String massa;
