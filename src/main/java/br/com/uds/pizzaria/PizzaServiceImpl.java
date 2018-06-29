@@ -33,4 +33,16 @@ public class PizzaServiceImpl implements PizzaService {
         this.repository.delete(id);
     }
 
+    @Override
+    public void editar(UUID id, Pizza pizza) {
+        Pizza pizzaRecuperada = this.obter(id);
+        remover(id);
+        pizzaRecuperada.setMassa(pizza.getMassa());
+        pizzaRecuperada.setMolho(pizza.getMolho());
+        pizzaRecuperada.setQueijo(pizza.getQueijo());
+        pizzaRecuperada.setSabor(pizza.getSabor());
+        pizzaRecuperada.setTempoDePreparo(pizza.getTempoDePreparo());
+        this.repository.save(pizzaRecuperada);
+    }
+
 }

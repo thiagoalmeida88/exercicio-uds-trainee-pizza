@@ -13,4 +13,5 @@ public interface PizzaService {
 
      void remover(UUID id);
 
+    void editar(UUID id, Pizza pizza);
 }
