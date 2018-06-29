@@ -63,6 +63,26 @@ public class Pizza {
         return tempoDePreparo;
     }
 
+    public void setMassa(String massa) {
+        this.massa = massa;
+    }
+
+    public void setQueijo(String queijo) {
+        this.queijo = queijo;
+    }
+
+    public void setMolho(String molho) {
+        this.molho = molho;
+    }
+
+    public void setSabor(String sabor) {
+        this.sabor = sabor;
+    }
+
+    public void setTempoDePreparo(int tempoDePreparo) {
+        this.tempoDePreparo = tempoDePreparo;
+    }
+
     @Override
     public String toString() {
         return "Pizza{" +

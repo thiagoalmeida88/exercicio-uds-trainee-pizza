@@ -20,14 +20,21 @@ public class PizzaController {
         return new ResponseEntity(pizzaCriada.toString(), HttpStatus.CREATED);
     }
 
-    @GetMapping
+    @GetMapping()
     public Set<Pizza> listar() {
         return this.pizzaService.listar();
     }
+    @GetMapping("/findBy")
+    public Pizza obter(@RequestParam("id")UUID id){return this.pizzaService.obter(id);}
 
     @DeleteMapping
     public ResponseEntity remover(@RequestParam("id")UUID id){
         this.pizzaService.remover(id);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
+    @PutMapping
+    public ResponseEntity editar(@RequestParam("id")UUID id,@RequestBody Pizza pizza){
+        this.pizzaService.editar(id,pizza);
+        return new ResponseEntity("Editado com Sucesso!",HttpStatus.OK);
     }
 }
