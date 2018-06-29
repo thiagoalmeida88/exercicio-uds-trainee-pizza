@@ -14,4 +14,8 @@ public class PizzaDTO {
     public Pizza objectPizza(){
         return new Pizza(massa, queijo, molho, sabor, tempoDePreparo);
     }
+
+    public Pizza transformaParaObjeto(){
+        return new Pizza(massa,queijo,molho,sabor,tempoDePreparo);
+    }
 }

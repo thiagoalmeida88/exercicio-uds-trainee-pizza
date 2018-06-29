@@ -16,8 +16,8 @@ public class PizzaController {
 
     @PostMapping
     public ResponseEntity<Pizza> criar(@RequestBody PizzaDTO pizza) {
-        Pizza pizzaCriada = this.pizzaService.criar(pizza.objectPizza());
-        return new ResponseEntity(pizzaCriada.toString(), HttpStatus.CREATED);
+        Pizza pizzaCriada = pizzaService.criar(pizza.transformaParaObjeto());
+        return new ResponseEntity(pizzaCriada, HttpStatus.CREATED);
     }
 
     @GetMapping()
