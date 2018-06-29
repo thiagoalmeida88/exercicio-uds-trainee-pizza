@@ -11,13 +11,14 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/pizzas")
 public class PizzaController {
+
     @Autowired
     private PizzaService pizzaService;
 
     @PostMapping
     public ResponseEntity<Pizza> criar(@RequestBody PizzaDTO pizza) {
         Pizza pizzaCriada = pizzaService.criar(pizza.transformaParaObjeto());
-        return new ResponseEntity(pizzaCriada, HttpStatus.CREATED);
+        return new ResponseEntity(pizzaCriada.toString(), HttpStatus.CREATED);
     }
 
     @GetMapping()
